@@ -54,7 +54,7 @@ hosts=yes
 # queues. Either specify a comma seperated list or use
 # multiple lines.
 #hostgroups=name1
-hostgroups={{mod_gearman_hostgroups_queues}}
+{% if hostgroups is defined %}hostgroups={{ hostgroups }}{% else %}hostgroups={{mod_gearman_hostgroups_queues}}{% endif %}
 
 
 # sets a list of servicegroups which will go into seperate
